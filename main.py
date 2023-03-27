@@ -11,3 +11,9 @@ grid = [
 
 
 def possible(x, y, n):  # n is the possible number
+    for i in range(0,9):
+        if grid[i][x]==n and i!=y:
+            return False
+    for i in range(0,9):
+       if grid[y][i] !=n and i!=x:
+            return False
