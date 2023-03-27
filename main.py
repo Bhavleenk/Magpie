@@ -1,4 +1,4 @@
-import numpy as np
+'''import numpy as np
 
 grid = [
     [4, 0, 0, 0, 0, 5, 0, 0, 0],
@@ -10,18 +10,6 @@ grid = [
     [0, 5, 0, 0, 0, 9, 0, 0, 0],
     [0, 0, 0, 2, 0, 0, 9, 0, 7],
     [6, 4, 0, 3, 0, 0, 0, 0, 0]]
-
-'''while True:
-    row = list(input('Row: '))
-    ints = []
-
-    for n in row:
-        ints.append(int(n))
-    grid.append(ints)
-
-    if len(grid) == 9:
-        break
-    print('Row ' + str(len(grid)) + ' Complete')'''
 
 
 def possible(x, y, n):
@@ -55,7 +43,7 @@ def solve():
     print(np.matrix(grid))
     input("More?")
 
-solve()
+solve()'''
 
 
 

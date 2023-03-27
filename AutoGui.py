@@ -2,22 +2,21 @@ import pyautogui as pg
 import numpy as np
 import time
 
+grid = []
 
-grid=[]
 while True:
-    row =list(input('Row: '))
-    ints=[]
+    row = list(input('Row: '))
+    ints = []
+
     for n in row:
         ints.append(int(n))
     grid.append(ints)
 
-    if len(grid)==9:
+    if len(grid) == 9:
         break
-    print('Row' + str(len(grid) + 'Completed'))
+    print('Row ' + str(len(grid)) + ' Complete')
 
-
-time.sleep(3) #time lagta hai usko ruko zara
-
+time.sleep(1)
 
 def possible(x, y, n):
     for i in range(0, 9):
@@ -37,21 +36,31 @@ def possible(x, y, n):
     return True
 
 def Print(matrix):
-    final=[]
-    str_fin=[]
+    final = []
+    str_fin = []
     for i in range(9):
         final.append(matrix[i])
 
     for lists in final:
         for num in lists:
             str_fin.append(str(num))
-    counter=[]
+
+    counter = []
+
     for num in str_fin:
         pg.press(num)
-        pg.hockey('right')
+        pg.hotkey('right')
         counter.append(num)
-        if len(counter)%9==0:
-
+        if len(counter)%9 == 0:
+            pg.hotkey('down')
+            pg.hotkey('left')
+            pg.hotkey('left')
+            pg.hotkey('left')
+            pg.hotkey('left')
+            pg.hotkey('left')
+            pg.hotkey('left')
+            pg.hotkey('left')
+            pg.hotkey('left')
 
 
 def solve():
@@ -65,12 +74,7 @@ def solve():
                         solve()
                         grid[y][x] = 0
                 return
-    print(grid)
+    Print(grid)
     input("More?")
 
 solve()
-
-
-
-
-
